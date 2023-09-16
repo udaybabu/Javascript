@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DOM</title>
+    <style>
+      .container {
+        padding: 15px;
+        text-align: center;
+      }
+      .d1 {
+        text-align: center;
+        /* border: 2px solid rebeccapurple; */
+        font-size: 17px;
+        padding: 5px;
+        border-radius: 5px;
+      }
+      .d1:focus {
+        background-color: aqua;
+        border: red !important;
+      }
+      .d1:hover {
+        border: 2px solid red;
+      }
+      .btnSubmit {
+        background-color: brown;
+        text-align: center;
+        font-size: 15px;
+        padding: 5px;
+        border-radius: 5px;
+        cursor: pointer;
+      }
+      .btnSubmit:hover {
+        background-color: yellow;
+      }
+    </style>
+    <script>
+      function addEvents() {
+        let txt = document.getElementById('d3').value;
+        let item = document.getElementById('list')
+        let newLi = document.createElement('li')
+        let liText = document.createTextNode(txt)
+        newLi.appendChild(liText)
+        item.appendChild(newLi)
+        let editBtn = document.createElement('button')
+        let txtEditButton = document.createTextNode('Edit')
+        editBtn.appendChild(txtEditButton)
+        item.appendChild(editBtn)
+        let Inp = document.createElement('input')
+        let txtInp = document.createTextNode('Enter')
+        Inp.appendChild(txtInp)
+        item.appendChild(Inp)
+        document.getElementById('d3').value = ''
+      }
+    </script>
+  </head>
+  <body>
+    <div class="container">
+      <input class="d1" id="d3" type="text" placeholder="Enter" />
+      <button id="text" class="btnSubmit" onclick="addEvents()">ADD</button>
+      <ul id="list"></ul>
+    </div>
+  </body>
+</html>

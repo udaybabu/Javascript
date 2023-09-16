@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // Decleration of variables
+        let x = 100; //block scope
+        var y = 200; //function scope
+        {
+            let r = 100;
+            var p = 200;
+        }
+        x = 30;
+        console.log('P is:',p);
+        console.log('x is:',x);
+       // console.log('r is:',r);
+
+       const z = y;
+       console.log('Z is:',z);
+       y = 420;
+       console.log('Z is:',z)
+      function testObject(){
+        var obj = {
+        name : 'srikanth',
+        place: 'hyderabad'
+       }
+      }
+      testObject();
+      // obj.name = "ramesh"
+      // console.log(obj);
+       const constObj = {
+        fname: 'pratap',
+        lname:'kumar'
+       }
+       constObj.place = 'tirupathi';
+       console.log('const obj is:',constObj);
+
+      // let x = 21;
+       var y = 30;
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

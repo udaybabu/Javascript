@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Object oriented javascript</title>
+  </head>
+  <script>
+    function A() {
+      var p = 100;
+      this.abc = function () { //Methods
+        return p + 10;
+      };
+    }
+    function B() {
+      var p = 400;
+      this.xyz = function () { //Meethods
+        return p - 300;
+      };
+    }
+    let a = new A();
+    console.log(a.abc());
+    let b = new B();
+    console.log(b.xyz())
+  </script>
+  <body></body>
+</html>

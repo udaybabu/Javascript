@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Events</title>
+    <style>
+      body {
+        text-align: center;
+      }
+      .d1 {
+        width: 500px;
+        height: 450px;
+        background-color: blue;
+      }
+    </style>
+    <script>
+      function abc(e) {
+        console.dir(e);
+      }
+      function doubleClick(p) {
+        console.dir(p);
+      }
+      function mouseMove(q) {
+        console.dir(q);
+        document.getElementById('para').innerHTML = "X is:"+ q.offsetX + "Y is:" + q.offsetY
+      }
+    </script>
+  </head>
+  <body>
+    <!-- click is Events
+    onclick is event listionar
+    singleClick() is event handular 
+    onclick="singleClick(event)" 
+    ondblclick="doubleClick(event)"-->
+    <div class="d1" onmousemove="mouseMove(event)">
+    <h3 id="para"></h3>
+    </div>
+  </body>
+</html>

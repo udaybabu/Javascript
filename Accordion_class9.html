@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Accordion</title>
+    <script>
+      var isSelect = true;
+      function clickHeader(e) {
+        console.dir(event);
+        if (isSelect) {
+          e.target.nextElementSibling.hidden = true;
+          isSelect = false;
+        } else {
+          e.target.nextElementSibling.hidden = false;
+          isSelect = true;
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <div>
+      <h2 onclick="clickHeader(event)">1.HeadingMain</h2>
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eaque aperiam,
+        est qui voluptatem autem repellat tenetur quo voluptatibus reiciendis et
+        magnam nihil molestias at alias ex ut dolores modi velit?
+      </p>
+    </div>
+    <div>
+      <h2 onclick="clickHeader(event)">2.HeadingSub</h2>
+      <p>
+        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Obcaecati,
+        dolorum quae sapiente numquam facere tempora cumque? Hic nulla facilis
+        voluptatibus impedit nihil illum dolor. Hic dicta tempora facere eveniet
+        perferendis.
+      </p>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Statements</title>
+    <script>
+        for(let i=0;i<=3; i++){
+           console.log('i is:'+i);
+           document.write("<br>", "<p>"+i +"</p>");
+        }
+        let a = 0
+        while(a<=5){
+            console.log('A is:',a);
+            a++;
+        }
+        function checkFactor(n){
+            let c = 1;
+           while(c<=n){
+            if(n%c === 0){
+                console.log(`Yes ${c} is factor of ${n}`)
+            }else{
+                console.log(`No ${c} is not a factor of ${n}`)
+            }
+             c++
+           }
+        }
+       // checkFactor(84);
+      function sampleTable(k){
+        console.log(`----------------- Table of ${k}-----------------`)
+         for(let i=20; i>=1; i--){
+            console.log(`${k} * ${i} = ${k*i}`)
+         }
+      }
+      
+      let o=1
+      while(o<=15){
+       // sampleTable(o)
+        o++
+      }
+
+      function printStarsPattern(p){
+         for(let k=1;k<=p;k++){
+            document.write('<br>')
+            for(let n=1;n<=k;n++){
+                document.write('*')
+               // document.write(n)
+            }
+         }
+         for(let r=p-1; r>0; r--){
+            document.write('<br>')
+            for(let s=1;s<=r;s++){
+                document.write('*')
+              // document.write(s)
+            }
+         }
+        }
+      printStarsPattern(10);
+      //123
+      function reverseNumber(n){
+        let p = n, r=0, sum=0
+        while(n != 0){
+             r = n%10
+             sum = sum*10 + r
+             n = Math.floor(n/10)
+        }
+        console.log('reverse number is:',sum);
+      }
+      reverseNumber(123);
+      
+        
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

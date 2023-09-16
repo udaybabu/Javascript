@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arrays</title>
+    <link rel="stylesheet" href="">
+    <script></script>
+</head>
+<script>
+    let q = [1,3,6,8,4,9];
+    console.log(q);
+    for (const k in q) {
+      console.log(k);
+    }
+    let r = q.indexOf(6);
+    console.log('index of 6 is:',r)
+     q.sort();
+    console.log('Sort is:',q);
+
+    console.log('At is:',q.at(2));
+    var names = ['a','b','c','d'];
+    names.pop()
+    console.log('pop is:',names);
+    names.push(7);
+    console.log('push is:',names);
+    names.shift();
+    console.log('shift is:',names);
+    names.unshift('e');
+    console.log('unshift is:',names);
+    var places = ['1','2','3','4','5','6','7','8'];
+    places.splice(3,0,'x','y');
+    console.log('Add items by using splice is:',places);
+    places.splice(4,2,'z');
+    console.log('Update items by using splice is:',places);
+    var t = places.slice(4);
+    console.log('slice of items is:',t);
+
+    var countries = ['ind','pak','srl','nep','lnd','usa','rsa'];
+      countries = countries.filter(c => c !== 'usa')
+      countries.unshift('usa');
+    console.log('countrys is:',countries);
+
+    var mycountries=countries.map((m) => m+'-P')
+    console.log('Map of countries is:',mycountries);
+    var fArray = ['a','b','c',['d',['p','q'],'f'],'g','h']
+    var fMap = fArray.flatMap(f => f.slice(''));
+    console.log('flat map is:',fMap);
+    
+    let chars = ['l','o','m','n','o','p','l','m']
+    let uniqueChar = [...new Set(chars)];
+    console.log('uniqueChar',uniqueChar);
+    uniqueChar.sort();
+    uniqueChar.shift()
+    uniqueChar.unshift('k')
+    uniqueChar.pop()
+    uniqueChar.push('p')
+    console.log('uniqueChar after edit',uniqueChar);
+    var numArray = [1,3,6,7,4,2,3,7,8,9,2,1]
+    var count = {}
+    numArray.forEach(iteam => {
+     if(count[iteam]){
+        count[iteam] += 1
+        return
+     }
+     count[iteam] = 1
+    })
+    console.log(count);
+    let f = 10;
+    let g = 20;
+    f = f+g;
+    g = f-g;
+    f = f-g;
+    console.log(`Swaping f is:${f}--g is:${g}`);
+    let reduceArray = [1,3,6,7,4,2,3,7,8,9,2,1]
+    let redu = reduceArray.reduce((f,g) => f+g)
+    console.log('reduce is:',redu);
+    console.log('Reverse array:',reduceArray.reverse());
+    
+    var places = ['piler','tirupathi','rompicherla','kallaru']
+    function reverseArray(arr){
+     var v1 = [];
+      for(let i= arr.length; i>0;i--){
+       v1.push(arr[i-1])
+      }
+      return v1
+    }
+    console.log('places is',reverseArray(places));
+    const array = [1,2,3,4,5,6,"taco"];
+
+    var testStr = "Hello World";
+    console.log("reverse string is:",[...testStr].reverse().join(''))
+    function reverseString(str){
+    let s = ""
+    for(let i=str.length-1;i>=0;i--){
+        s += str[i]
+    }
+    return s
+    }
+    console.log('Reverse string is:',reverseString('uday'));
+
+function reverse(array){
+  return array.map((p,i) => array[array.length-1-i])
+}
+console.log('reverse arr is:',reverse(array))
+</script>
+<body>
+    
+</body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>HigherOrderFunctions</title>
+    <script>
+      var k = [3, 7, 9, 26, 4, 5, 24, 13, 18, 10];
+      k = k.map(function (item, index, arr) {
+        return item * item;
+      });
+      console.log("Map is:", k);
+      k = k.sort(function (a,b,index,arr) {
+        return a - b;
+      });
+      console.log("Sort is:", k);
+      k = k.filter(function (iteam, index, arr) {
+        return iteam > 50;
+      });
+      console.log("Filter is:", k);
+      k = k.map((i) => i > 40);
+      console.log("Map is:", k);
+
+      var b = [7, 6, 9, 3, 5, 0, 8, 18, 28, 64, 92, 82];
+      b = b.filter((p) => p < 7).map((t) => t * t);
+      console.log(b);
+    //   const sumWithInitial = array1.reduce(
+    //     (previousValue, currentValue) => previousValue + currentValue,
+    //     initialValue
+    //   );
+      b = b.reduce(function (a, b,index,arr) {
+        return a + b;
+      });
+      console.log("Reduce is:", b);
+
+      l = [175,50,25]
+      let h = l.reduce(function(prValue,currentValue,currentIndex, array){
+          console.log(`Prv Value is:${prValue} Current value is:${currentValue}`)
+          return prValue - currentValue
+      })
+      console.log("Reduce is:",h);
+      //Some
+
+      let s = [10, 18, 5]
+      var isVoteAvailable = s.some(p => p >= 18);
+      console.log('isElagibale for vote',isVoteAvailable);
+    </script>
+  </head>
+  <body></body>
+</html>

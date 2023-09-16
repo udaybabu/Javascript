@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function display_roll_number(){
+            let name = document.getElementById("name");
+            let arr = getRoll_number(name.value);
+            if(arr.length>0){
+                console.log("RollNumber is:",arr[0].roll)
+                document.getElementById("roll_number").innerText = `Roll number is:${arr[0].roll}`;
+            } else {
+                console.log("User not existed")
+                document.getElementById("roll_number").innerText = `User not existed`;
+            }
+            findRepeatValue()
+        }
+        function getRoll_number(name){
+            var list = [{name:"uday",place:"piler",roll:20},
+            {name:"mahesh",place:"piler",roll:10},
+            {name:"kumar",place:"tpt",roll:30},
+            {name:"naveen",place:"hyd",roll:40},{name:"uday",place:"piler",roll:21}];
+            let roll = list.filter(f => f.name === name)
+            return roll
+        }
+
+        function findRepeatValue(){
+            var obj = {}
+            var list = [1,3,2,1,4,5,4,3,6,7,5,8,6];
+            list.forEach(i => {
+                let keys = Object.keys(obj)
+                if(keys.includes(i)) {
+                    obj[i] = obj[i] + 1
+                } else {
+                    obj[i] = 1
+                }     
+            })
+            console.log('obj is:',obj)
+        }
+    </script>
+</head>
+<body>
+    <input type="text" id="name"  placeholder="Enter name">
+    <button onclick="display_roll_number()">ClickMe</button>
+    <h3 id="roll_number"></h3>
+</body>
+</html>

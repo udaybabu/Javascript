@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Built In Objects</title>
+    <style>
+    .divStyles{
+      display: flex;
+      justify-content: center;
+      align-items: center; 
+    }
+    .preButton{
+        display: flexbox;
+        justify-content: center;
+        color: white;
+        background-color: blueviolet;
+        border: 0.5px,solid,black;
+        font-size: 18px;
+        padding: 7px;
+        margin: 10px;
+        border-radius: 5px;
+    }
+    .nextButton{
+        color: white;
+        background-color: blueviolet;
+        border: 0.5px,solid,black;
+        font-size: 18px;
+        padding: 7px;
+        margin: 10px;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+    .imgClass {
+        background-color: aqua;
+    } 
+    </style>
+    <script>
+        var albumList = [
+            {
+                "albumId": 1,
+                "id": 1,
+                "title": "accusamus beatae ad facilis cum similique qui sunt",
+                "url": "https://via.placeholder.com/600/92c952",
+                "thumbnailUrl": "https://via.placeholder.com/150/92c952"
+            },
+            {
+                "albumId": 1,
+                "id": 2,
+                "title": "reprehenderit est deserunt velit ipsam",
+                "url": "https://via.placeholder.com/600/771796",
+                "thumbnailUrl": "https://via.placeholder.com/150/771796"
+            },
+            {
+                "albumId": 1,
+                "id": 3,
+                "title": "officia porro iure quia iusto qui ipsa ut modi",
+                "url": "https://via.placeholder.com/600/24f355",
+                "thumbnailUrl": "https://via.placeholder.com/150/24f355"
+            },
+            {
+                "albumId": 1,
+                "id": 4,
+                "title": "culpa odio esse rerum omnis laboriosam voluptate repudiandae",
+                "url": "https://via.placeholder.com/600/d32776",
+                "thumbnailUrl": "https://via.placeholder.com/150/d32776"
+            },
+            {
+                "albumId": 1,
+                "id": 5,
+                "title": "natus nisi omnis corporis facere molestiae rerum in",
+                "url": "https://via.placeholder.com/600/f66b97",
+                "thumbnailUrl": "https://via.placeholder.com/150/f66b97"
+            },
+            {
+                "albumId": 1,
+                "id": 6,
+                "title": "accusamus ea aliquid et amet sequi nemo",
+                "url": "https://via.placeholder.com/600/56a8c2",
+                "thumbnailUrl": "https://via.placeholder.com/150/56a8c2"
+            }
+        ]
+    var index = 0    
+   function preClicked(){
+    index--
+    if(index >=0){
+    document.getElementById('img').src = albumList[index]['thumbnailUrl']
+    if(index===0){
+    document.getElementById('pre').disabled = true
+    document.getElementById('nxt').disabled = false   
+    }
+    }
+   
+   }
+   function nextClicked(){
+    index++
+    if(index<=albumList.length-1){
+    document.getElementById('pre').disabled = false
+    document.getElementById('img').src = albumList[index]['thumbnailUrl']
+    if(index === albumList.length-1){
+        document.getElementById('nxt').disabled = true; 
+    }
+    }
+   }
+    </script>
+</head>
+<body>
+   <div class="divStyles">
+   <button id="pre" class="preButton" onclick="preClicked()" disabled>Previous</button>
+   <img src="https://via.placeholder.com/150/92c952" id="img" class="imgClass" alt="Default Imagg"> 
+   <button id="nxt" class="nextButton" onclick="nextClicked()">Next</button>
+   </div>
+</body>
+</html>

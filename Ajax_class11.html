@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ajax</title>
+</head>
+<script>
+    function getResponse(){
+        let http = new XMLHttpRequest()
+        console.log(http.readyState)
+        http.open("GET","https://jsonplaceholder.typicode.com/photos",true)
+        http.send()
+        console.log(http.readyState)
+        console.dir(http);
+        http.onreadystatechange = function (){
+            console.log(http.readyState)
+            if(http.readyState === 4 && http.status === 200){
+            var data = JSON.parse(http.response)
+            console.log(data)
+            data.forEach(element => {
+                let divElement = document.getElementById('d1')
+                let imgElement = document.createElement('img')
+                let imgSrc = document.createAttribute('src')
+                imgSrc.value = element.thumbnailUrl
+                imgElement.setAttributeNode(imgSrc)
+                divElement.appendChild(imgElement)
+
+            });
+            }     
+        }
+    }
+
+</script>
+<body>
+    <h2>This is ajax call</h2>
+    <button onclick="getResponse()">Make Ajax Call</button>
+    <div id="d1"></div>
+    
+</body>
+</html>

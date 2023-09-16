@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Advanced Functions</title>
+    <script>
+      function abc() {
+        console.log("It's normal function");
+      }
+      // function litterals
+      var poy = function () {
+        console.log("It's function litterals");
+      };
+      console.log(typeof p);
+      // p = 123
+      // console.log(typeof(p));
+
+      //anounimus function
+      (function () {
+        console.log("This is an anounimus function");
+      })();
+
+      function xyz(m, n) {
+        console.log(m, n);
+        // n();
+      }
+      xyz("123", function () {
+        alert("Hello World");
+      });
+      var r = [1, 8, 9, 4, 16, 20, 3, 7, 5, 6];
+      let count = 0;
+      var p = [];
+      r.forEach(function (item, index, arr) {
+        count += item;
+        p.push(arr[arr.length - 1 - index]);
+        // console.log(`Iteam is:${item} Index is:${index} Array is:${arr}`);
+      });
+      p = p.sort(function (a, b) {
+        // console.log(`a is:${a} b is:${b}`)
+        return a - b;
+      });
+      console.log(`Reverse array is:${p}`);
+      console.log("Count is:" + count);
+
+     
+      var numbers = [1, 4, 9];
+      var doubles = numbers.map((num) => num * 2);
+      console.log("doubles is",doubles)
+      var u = [5, 7, 4, 9, 10, 8, 3, 1];
+      var mapArr = u.map(function(iteam,index,arr){
+        return iteam%2 === 0 ? iteam*2:iteam*3
+      }  
+      );
+      console.log("mapArr is:" + mapArr);
+    </script>
+  </head>
+  <body>
+    <button onclick="abc()">NormalFunctio</button>
+    <button onclick="poy()">FunctionLitterals</button>
+  </body>
+</html>

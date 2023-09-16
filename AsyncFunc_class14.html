@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Async functions</title>
+    <script>
+      function abc(a, b, c) {
+        console.log("this is sync function");
+        return a + b + c;
+      }
+      setTimeout(function () {
+        console.log("Hello async function");
+      }, 3000); //Async function
+      abc(); //Sync function
+      console.log("After async func");
+
+      var t = setTimeout(function () {
+        console.log("This is set time out");
+      }, 8000);
+      function stopTimeOut() {
+        clearTimeout(t)
+        clearInterval(j)
+        console.log("Time out stoped")
+      }
+      var j = setInterval(function(){
+        console.log("This is set time intervel")
+      },2000)
+    </script>
+  </head>
+  <body>
+    <button onclick="stopTimeOut()">StopSetTimeOut</button>
+  </body>
+</html>
